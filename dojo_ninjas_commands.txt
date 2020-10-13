@@ -1,0 +1,76 @@
+In [2]: from dojo_ninjas_app.models import dojos, ninjas
+
+In [3]: dojos.objects.create(name="super awesome", city="Costa Mesa", state="C
+   ...: A")
+Out[3]: <dojos: dojos object (1)>
+
+In [4]: dojos.objects.create(name="BurDojos", city="Burbank", state="CA")
+Out[4]: <dojos: dojos object (2)>
+
+In [5]: dojos.objects.create(name="ChiDojos", city="Chicago", state="IL")
+Out[5]: <dojos: dojos object (3)>
+
+In [8]: dojos.objects.get(id="1").delete()
+Out[8]: (1, {'dojo_ninjas_app.ninjas': 0, 'dojo_ninjas_app.dojos': 1})
+
+In [9]: dojos.objects.get(id="2").delete()
+Out[9]: (1, {'dojo_ninjas_app.ninjas': 0, 'dojo_ninjas_app.dojos': 1})
+
+In [10]: dojos.objects.get(id="3").delete()
+Out[10]: (1, {'dojo_ninjas_app.ninjas': 0, 'dojo_ninjas_app.dojos': 1})
+
+In [11]: dojos.objects.create(name="super awesome", city="Costa Mesa", state="
+    ...: CA")
+Out[11]: <dojos: dojos object (4)>
+
+In [12]: dojos.objects.create(name="BurDojos", city="Burbank", state="CA")
+Out[12]: <dojos: dojos object (5)>
+
+In [13]: dojos.objects.create(name="ChiDojos", city="Chicago", state="IL")
+Out[13]: <dojos: dojos object (6)>
+
+In [14]: ninjas.objects.create(first_name="Clark", last_name="Kent", dojo = dojos.objects.get(id="4"))
+Out[14]: <ninjas: ninjas object (1)>
+
+In [15]: ninjas.objects.create(first_name="Bruce", last_name="Wayne", dojo = dojos.objects.get(id="4"))
+Out[15]: <ninjas: ninjas object (2)>
+
+In [16]: ninjas.objects.create(first_name="Barry", last_name="Allen", dojo = dojos.objects.get(id="4"))
+Out[16]: <ninjas: ninjas object (3)>
+
+In [17]: dojos.objects.all()
+Out[17]: <QuerySet [<dojos: dojos object (4)>, <dojos: dojos object (5)>, <dojos: dojos object (6)>]>
+
+In [18]: ninjas.objects.create(first_name="Cisco", last_name="Blaze", dojo = dojos.objects.get(id="5"))
+Out[18]: <ninjas: ninjas object (4)>
+
+In [19]: ninjas.objects.create(first_name="Julian", last_name="Geromes", dojo = dojos.objects.get(id="5"))
+Out[19]: <ninjas: ninjas object (5)>
+
+In [20]: ninjas.objects.create(first_name="Steve", last_name="White", dojo = dojos.objects.get(id="5"))
+Out[20]: <ninjas: ninjas object (6)>
+
+In [21]: ninjas.objects.create(first_name="Steve", last_name="Rogers", dojo = dojos.objects.get(id="6"))
+Out[21]: <ninjas: ninjas object (7)>
+
+In [22]: ninjas.objects.create(first_name="Anthony", last_name="Stark", dojo = dojos.objects.get(id="6"))
+Out[22]: <ninjas: ninjas object (8)>
+
+In [23]: ninjas.objects.create(first_name="Peter", last_name="Parker", dojo = dojos.objects.get(id="6"))
+
+Out[23]: <ninjas: ninjas object (9)>
+
+In [26]: awesome_dojo = dojos.objects.get(id="4")
+
+In [27]: awesome_dojo.ninjas.all()
+Out[27]: <QuerySet [<ninjas: ninjas object (1)>, <ninjas: ninjas object (2)>, <ninjas: ninjas object (3)>]>
+
+In [28]: dojos.objects.get(id="6").ninjas.all()
+Out[28]: <QuerySet [<ninjas: ninjas object (7)>, <ninjas: ninjas object (8)>, <ninjas: ninjas object (9)>]>
+
+In [31]: ninjas.objects.last().dojo.name
+Out[31]: 'ChiDojos'
+
+In [32]: dojos.objects.create(name="Seadojo", city="Seattle", state="WA", desc="first dojo, i think")
+Out[32]: <dojos: dojos object (7)>
+

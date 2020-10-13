@@ -1,0 +1,66 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#canvas{
+    margin: 20px auto;
+    text-align: center;
+}
+
+#top_section{
+    vertical-align: top;
+    width: 60%;
+    display: flex;
+    margin: 20px auto;
+}
+
+.input_block{
+    display: inline-block;
+    width: 40%;
+    margin: 10px auto;
+    
+}
+
+#dojo_header{
+    text-align: center;
+    border-top: 5px solid black;
+    width: 70%;
+    margin: 40px auto;
+}
+
+input{
+    margin: 5px;
+    margin-left: 10px;
+    
+}
+
+.input_block > h1{
+    width: 100%;
+    display: inline-block;
+}
+
+
+.input_block > form > label{
+    width: 100%;
+    display: inline-block;
+}
+table{
+    vertical-align: top;
+    text-align: left;
+    margin: 5px auto;
+}
+
+#dojo_list{
+    text-align: left;
+    width: 15%;
+    margin: auto;
+}
+
+li{
+    width: 100%;
+    margin: 5px;
+}
+
+ul{
+    margin: 5px 50;
+}
+
