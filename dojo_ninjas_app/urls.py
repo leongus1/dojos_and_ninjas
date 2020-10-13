@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.index),
     path('dojos/', views.add_dojo),
     path('ninjas/', views.add_ninja),
+    path('delete/<int:id>/', views.delete)
 ]

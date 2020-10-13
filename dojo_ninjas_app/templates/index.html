@@ -74,7 +74,7 @@
         <div id="dojo_list">
             <ul>
                 {% for dojo in dojos%}
-                    <li>{{dojo.name}}</li>
+                    <li>{{dojo.name}} - # of ninjas: {{dojo.ninjas.count}} <a href="/delete/{{dojo.id}}/"><button>Delete</button></a> </li>
                         <ul>
                 
                     {% for student in dojo.ninjas.all %}

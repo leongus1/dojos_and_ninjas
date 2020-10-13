@@ -18,3 +18,9 @@ def add_ninja(request):
     # dojo=request.POST['dojo']
     ninjas.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], dojo=dojos.objects.get(id=request.POST['dojo']) )
     return redirect('/')
+
+def delete(request, id):
+    thisDojo = dojos.objects.get(id=id)
+    thisDojo.delete()
+    return redirect('/')
+    # return HttpResponse('delete path working')
